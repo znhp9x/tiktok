@@ -7,10 +7,10 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0; /* You might want to remove or adjust this if it conflicts with your background image */
-            background-image: url('images/background.png'); /* Adding the background image */
-            background-size: cover; /* This will cover the entire body without repeating the image */
-            background-position: center; /* This centers the background image */
+            background-color: #f0f0f0; /* Bạn có thể muốn điều chỉnh này nếu nó xung đột với hình nền */
+            background-image: url('images/background.png'); /* Thêm hình nền */
+            background-size: cover; /* Hình nền sẽ phủ kín mà không lặp lại */
+            background-position: center; /* Trung tâm hình nền */
             text-align: center;
             padding: 50px;
         }
@@ -36,8 +36,8 @@
         }
         .link-item img {
             margin-right: 10px;
-            width: 100px; /* Adjusted size */
-            height: 100px; /* Adjusted size */
+            width: 100px;
+            height: 100px;
         }
         .link-item a {
             background-color: #007bff;
@@ -45,6 +45,18 @@
             padding: 10px 20px;
             text-decoration: none;
             border-radius: 5px;
+        }
+        #shootingStars {
+            position: relative;
+            overflow: hidden;
+            height: 100vh;
+        }
+        .shooting-star {
+            position: absolute;
+            height: 2px;
+            background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 100%);
+            opacity: 0;
+            will-change: transform;
         }
     </style>
 </head>
@@ -67,8 +79,37 @@
             <img src="images/zalo-logo.png" alt="Zalo Logo">
             <a href="https://zalo.me/0369246886">Zalo Group</a>
         </div>
-        <!-- Add more links as needed -->
     </div>
 
+    <!-- Container for Shooting Stars -->
+    <div id="shootingStars"></div>
+
+    <script>
+      function createShootingStar() {
+        const shootingStar = document.createElement('div');
+        shootingStar.classList.add('shooting-star');
+        document.getElementById('shootingStars').appendChild(shootingStar);
+
+        shootingStar.style.left = Math.random() * 100 + 'vw';
+        shootingStar.style.width = Math.random() * 100 + 100 + 'px';
+        shootingStar.style.opacity = 1;
+
+        shootingStar.animate([
+          { transform: 'translateX(0px) translateY(0px)', opacity: 1 },
+          { transform: `translateX(-${Math.random() * 500 + 500}px) translateY(${Math.random() * 500 + 500}px)`, opacity: 0 }
+        ], {
+          duration: Math.random() * 1000 + 500,
+          delay: Math.random() * 3000,
+          easing: 'linear',
+          fill: 'forwards'
+        });
+
+        shootingStar.onanimationend = () => {
+          shootingStar.remove();
+        };
+      }
+
+      setInterval(createShootingStar, 750);
+    </script>
 </body>
 </html>
