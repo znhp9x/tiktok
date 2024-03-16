@@ -10,6 +10,7 @@
             background-color: #f0f0f0;
             text-align: center;
             padding: 50px;
+            position: relative; /* Thêm để hỗ trợ vị trí tuyệt đối cho logo */
         }
         .profile-pic {
             width: 150px;
@@ -21,35 +22,37 @@
             color: #333;
         }
         .links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            display: block;
             margin: 10px auto;
             background-color: #007bff;
             color: white;
             padding: 10px 20px;
             text-decoration: none;
-            width: 220px; /* Adjusted width */
+            width: 200px;
+            text-align: center;
             border-radius: 5px;
-            box-sizing: border-box;
         }
-        .links img {
-            margin-right: 10px;
-            width: 24px; /* Adjust size as needed */
-            height: 24px; /* Adjust size as needed */
+        .logo {
+            position: absolute;
+            left: 10px; /* Điều chỉnh theo ý muốn */
+            top: 10px; /* Điều chỉnh theo ý muốn */
+            width: 100px; /* Điều chỉnh kích thước logo */
         }
     </style>
 </head>
 <body>
 
+    <img src="images/discord-logo.png" alt="Discord Logo" class="logo">
     <img class="profile-pic" src="your-profile-pic-url.jpg" alt="Profile Picture">
     <h1>ZN</h1>
     <p>All Games Live Tiktok</p>
 
     <div class="links">
-        <a href="https://discord.com/znhp9x"><img src="path-to-discord-logo.png" alt="Discord Logo">Discord</a>
-        <a href="https://t.me/znhp9x"><img src="path-to-telegram-logo.png" alt="Telegram Logo">Telegram</a>
-        <a href="https://zalo.me/0369246886"><img src="path-to-zalo-logo.png" alt="Zalo Logo">Zalo</a>
+        <!-- Update these links with your own URLs -->
+        <a href="https://discord.com/znhp9x">Discord</a>
+        <a href="https://t.me/znhp9x">Telegram</a>
+        <a href="https://zalo.me/0369246886">Zalo</a>
+        <!-- Add more links as needed -->
     </div>
 
 </body>
