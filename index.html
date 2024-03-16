@@ -7,13 +7,12 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            background-image: url('images/background.png');
-            background-size: cover;
-            background-position: center;
+            background-color: #f0f0f0; /* You might want to remove or adjust this if it conflicts with your background image */
+            background-image: url('images/background.png'); /* Adding the background image */
+            background-size: cover; /* This will cover the entire body without repeating the image */
+            background-position: center; /* This centers the background image */
             text-align: center;
             padding: 50px;
-            overflow: hidden;
         }
         .profile-pic {
             width: 150px;
@@ -37,8 +36,8 @@
         }
         .link-item img {
             margin-right: 10px;
-            width: 100px;
-            height: 100px;
+            width: 100px; /* Adjusted size */
+            height: 100px; /* Adjusted size */
         }
         .link-item a {
             background-color: #007bff;
@@ -46,22 +45,6 @@
             padding: 10px 20px;
             text-decoration: none;
             border-radius: 5px;
-        }
-        #shootingStars {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            pointer-events: none;
-        }
-        .shooting-star {
-            position: absolute;
-            height: 2px;
-            background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 100%);
-            opacity: 0;
-            will-change: transform;
         }
     </style>
 </head>
@@ -84,16 +67,8 @@
             <img src="images/zalo-logo.png" alt="Zalo Logo">
             <a href="https://zalo.me/0369246886">Zalo Group</a>
         </div>
+        <!-- Add more links as needed -->
     </div>
 
-    <!-- Shooting Star Container -->
-    <div id="shootingStars"></div>
-
-    <script>
-      function createShootingStar() {
-        const shootingStar = document.createElement('div');
-        shootingStar.classList.add('shooting-star');
-        document.getElementById('shootingStars').appendChild(shootingStar);
-
-        shootingStar.style.left = Math.random() * 100 + 'vw';
-        shootingStar.style.width = Math.r
+</body>
+</html>
