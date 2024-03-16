@@ -20,8 +20,21 @@
         h1 {
             color: #333;
         }
+        .links {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .link-item {
+            margin: 10px 0;
+        }
+        .link-item img {
+            width: 24px;
+            height: 24px;
+        }
+        /* Đây là phần CSS mới được thêm vào */
         .links a {
-            display: inline-block;
+            display: block;
             margin: 10px auto;
             background-color: #007bff;
             color: white;
@@ -30,12 +43,6 @@
             width: 200px;
             text-align: center;
             border-radius: 5px;
-            vertical-align: middle;
-        }
-        .links img {
-            width: 24px;
-            height: 24px;
-            margin-right: 10px;
             vertical-align: middle;
         }
     </style>
@@ -47,10 +54,18 @@
     <p>All Games Live Tiktok</p>
 
     <div class="links">
-        <!-- Update these links with your own URLs -->
-        <a href="https://discord.com/znhp9x"><img src="images/discord-logo.png" alt="Discord Logo">Discord</a>
-        <a href="https://t.me/znhp9x"><img src="images/telegram-logo.png" alt="Telegram Logo">Telegram</a>
-        <a href="https://zalo.me/0369246886"><img src="images/zalo-logo.png" alt="Zalo Logo">Zalo</a>
+        <div class="link-item">
+            <img src="images/discord-logo.png" alt="Discord Logo">
+            <a href="https://discord.com/znhp9x">Discord</a>
+        </div>
+        <div class="link-item">
+            <img src="images/telegram-logo.png" alt="Telegram Logo">
+            <a href="https://t.me/znhp9x">Telegram</a>
+        </div>
+        <div class="link-item">
+            <img src="images/zalo-logo.png" alt="Zalo Logo">
+            <a href="https://zalo.me/0369246886">Zalo</a>
+        </div>
         <!-- Add more links as needed -->
     </div>
 
