@@ -10,7 +10,6 @@
             background-color: #f0f0f0;
             text-align: center;
             padding: 50px;
-            position: relative; /* Thêm để hỗ trợ vị trí tuyệt đối cho logo */
         }
         .profile-pic {
             width: 150px;
@@ -22,7 +21,7 @@
             color: #333;
         }
         .links a {
-            display: block;
+            display: inline-block;
             margin: 10px auto;
             background-color: #007bff;
             color: white;
@@ -31,26 +30,26 @@
             width: 200px;
             text-align: center;
             border-radius: 5px;
+            vertical-align: middle;
         }
-        .logo {
-            position: absolute;
-            left: 10px; /* Điều chỉnh theo ý muốn */
-            top: 10px; /* Điều chỉnh theo ý muốn */
-            width: 100px; /* Điều chỉnh kích thước logo */
+        .links img {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+            vertical-align: middle;
         }
     </style>
 </head>
 <body>
 
-    <img src="images/discord-logo.png" alt="Discord Logo" class="logo">
     <img class="profile-pic" src="your-profile-pic-url.jpg" alt="Profile Picture">
     <h1>ZN</h1>
     <p>All Games Live Tiktok</p>
 
     <div class="links">
         <!-- Update these links with your own URLs -->
-        <a href="https://discord.com/znhp9x">Discord</a>
-        <a href="https://t.me/0796455285">Telegram</a>
+        <a href="https://discord.com/znhp9x"><img src="images/discord-logo.png" alt="Discord Logo">Discord</a>
+        <a href="https://t.me/znhp9x">Telegram</a>
         <a href="https://zalo.me/0369246886">Zalo</a>
         <!-- Add more links as needed -->
     </div>
