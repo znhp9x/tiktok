@@ -110,19 +110,19 @@
 
       setInterval(createShootingStar, 750);
 
-      // Add tap heart effect
-      document.addEventListener('click', function(e) {
-          const heart = document.createElement('img');
-          heart.src = 'images/taptay.png'; // Đường dẫn đến hình ảnh của bạn
-          heart.classList.add('tap-heart');
-          heart.style.left = e.clientX + 'px';
-          heart.style.top = e.clientY + 'px';
-          document.body.appendChild(heart);
+// Add tap heart effect
+document.addEventListener('click', function(e) {
+    const heart = document.createElement('img');
+    heart.src = 'images/taptay.gif'; // Cập nhật đường dẫn thành hình ảnh động
+    heart.classList.add('tap-heart');
+    heart.style.left = e.clientX + 'px';
+    heart.style.top = e.clientY + 'px';
+    document.body.appendChild(heart);
 
-          setTimeout(() => {
-              heart.remove();
-          }, 500); // Hình ảnh sẽ tự động biến mất sau 0.5 giây
-      });
+    setTimeout(() => {
+        heart.remove();
+    }, 500); // Hình ảnh sẽ tự động biến mất sau 0.5 giây
+});
     </script>
 </body>
 </html>
