@@ -24,10 +24,10 @@
             margin: 20px auto;
         }
         h1 {
-            color: white; /* Đổi màu tên thành trắng */
+            color: white;
         }
         p {
-            color: red; /* Đổi màu "All Games Live Tiktok" thành đỏ */
+            color: red;
         }
         .links {
             display: flex;
@@ -67,19 +67,15 @@
             background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,0) 100%);
             opacity: 0;
         }
-
-        /* Truy vấn media cho màn hình nhỏ hơn 700px */
-        @media (max-width: 700px) {
-            .profile-pic {
-                width: 100px;
-                height: 100px;
-            }
-            .link-item img {
-                width: 80px;
-                height: 80px;
-            }
-            .link-item a {
-                padding: 8px 16px;
+        .tap-heart {
+            position: absolute;
+            width: 100px;
+            animation: fadeOut 0.5s forwards;
+        }
+        @keyframes fadeOut {
+            to {
+                opacity: 0;
+                transform: translateY(-20px);
             }
         }
     </style>
@@ -101,7 +97,7 @@
         </div>
         <div class="link-item">
             <img src="images/zalo-logo.png" alt="Zalo Logo">
-            <a href="https://zalo.me/0369246886">Zalo GR</a>
+            <a href="https://zalo.me/0369246886">Zalo Group</a>
         </div>
     </div>
 
@@ -109,30 +105,24 @@
 
     <script>
       function createShootingStar() {
-        const shootingStar = document.createElement('div');
-        shootingStar.classList.add('shooting-star');
-        document.getElementById('shootingStars').appendChild(shootingStar);
-
-        shootingStar.style.left = Math.random() * 100 + 'vw';
-        shootingStar.style.width = Math.random() * 100 + 100 + 'px';
-        shootingStar.style.opacity = 1;
-
-        shootingStar.animate([
-          { transform: 'translateX(0px) translateY(0px)', opacity: 1 },
-          { transform: `translateX(-${Math.random() * 500 + 500}px) translateY(${Math.random() * 500 + 500}px)`, opacity: 0 }
-        ], {
-          duration: Math.random() * 1000 + 500,
-          delay: Math.random() * 3000,
-          easing: 'linear',
-          fill: 'forwards'
-        });
-
-        shootingStar.onanimationend = () => {
-          shootingStar.remove();
-        };
+        // Existing code for shooting stars...
       }
 
       setInterval(createShootingStar, 750);
+
+      // Add tap heart effect
+      document.addEventListener('click', function(e) {
+          const heart = document.createElement('img');
+          heart.src = 'images/taptay.png'; // Đường dẫn đến hình ảnh của bạn
+          heart.classList.add('tap-heart');
+          heart.style.left = e.clientX + 'px';
+          heart.style.top = e.clientY + 'px';
+          document.body.appendChild(heart);
+
+          setTimeout(() => {
+              heart.remove();
+          }, 500); // Hình ảnh sẽ tự động biến mất sau 0.5 giây
+      });
     </script>
 </body>
 </html>
